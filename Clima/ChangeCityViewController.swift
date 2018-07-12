@@ -16,7 +16,7 @@ protocol ChangeCityDelegate {
 class ChangeCityViewController: UIViewController {
     
     //Declare the delegate variable here:
-    var anus: ChangeCityDelegate?
+    var delegate: ChangeCityDelegate?
     
     //This is the pre-linked IBOutlets to the text field:
     @IBOutlet weak var changeCityTextField: UITextField!
@@ -31,7 +31,7 @@ class ChangeCityViewController: UIViewController {
         let cityName = changeCityTextField.text!
         
         //2 If we have a delegate set, call the method userEnteredANewCityName
-        anus?.userEnteredANewCityName(city: cityName)
+        delegate?.userEnteredANewCityName(city: cityName)
     
         //3 dismiss the Change City View Controller to go back to the WeatherViewController
         self.dismiss(animated: true, completion: nil)
